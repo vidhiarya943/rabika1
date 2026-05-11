@@ -28,15 +28,24 @@
   </head>
   <body>
     <!-- Top Promo Banner -->
-    <div
-      class="fixed top-0 left-0 w-full bg-gradient-to-r from-pink-600 to-rose-500 text-white text-center py-2 text-sm font-medium"
-    >
-      🎉 FREE SHIPPING ABOVE ₹1299 | COD AVAILABLE | 7 DAY EASY RETURNS 🎉
-    </div>
-    <!-- Navbar -->
-    <nav
-      class="fixed top-0 left-0 z-50 flex w-full items-center justify-between border-b border-white/40 bg-white/75 px-6 py-4 shadow-sm backdrop-blur-xl dark:border-gray-700/50 dark:bg-gray-900/75"
-    >
+<div
+  class="fixed top-0 left-0 w-full bg-gradient-to-r from-pink-600 to-rose-500 text-white text-center py-2 text-sm font-medium z-50"
+  id="promoBanner"
+>
+  🎉 FREE SHIPPING ABOVE ₹1299 | COD AVAILABLE | 7 DAY EASY RETURNS 🎉
+  <button
+    onclick="document.getElementById('promoBanner').style.display='none'; document.getElementById('navbar').style.top='0';"
+    class="ml-4 text-white hover:text-gray-200 font-bold"
+  >
+    ✖
+  </button>
+</div>
+
+<!-- Navbar -->
+<nav
+  id="navbar"
+  class="fixed top-8 left-0 w-full flex items-center justify-between border-b border-white/40 bg-white/75 px-6 py-4 shadow-sm backdrop-blur-xl dark:border-gray-700/50 dark:bg-gray-900/75 z-50"
+>
       <a
         href="index.html"
         class="flex items-center gap-3 text-5xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-300"
