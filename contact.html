@@ -1,0 +1,372 @@
+<!doctype html>
+<html
+  lang="en"
+  class="scroll-smooth bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rabika - Products</title>
+    <link rel="icon" href="images/logo.jpeg" type="image/jpeg" />
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+    <script src="script.js" defer></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Italianno&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="fixed top-0 z-50 flex w-full items-center justify-between border-b border-white/40 bg-white/75 px-6 py-4 shadow-sm backdrop-blur-xl dark:border-gray-700/50 dark:bg-gray-900/75"
+    >
+      <a
+        href="index.html"
+        class="flex items-center gap-3 text-5xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-300"
+        style="font-family: &quot;Berkshire Swash&quot;, cursive"
+      >
+        <img
+          src="images/logo.jpeg"
+          alt="Rabika logo"
+          class="h-12 w-12 rounded-full object-cover"
+        />
+        <img
+          src="images/rabika.png"
+          alt="Rabika Logo"
+          class="h-12 w-auto object-contain transition-transform duration-300 hover:scale-105"
+        />
+      </a>
+      <ul
+        class="hidden md:flex space-x-10 text-lg font-semibold text-gray-900 dark:text-gray-100"
+      >
+        <li>
+          <a
+            href="index.html"
+            class="hover:text-pink-600 dark:hover:text-pink-400"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="products.html"
+            class="hover:text-pink-600 dark:hover:text-pink-400"
+            >Products</a
+          >
+        </li>
+        <li>
+          <a
+            href="cart.html"
+            class="hover:text-pink-600 dark:hover:text-pink-400"
+            >Add to Cart</a
+          >
+        </li>
+      </ul>
+      <!-- Hamburger Button -->
+      <button
+        id="menuToggle"
+        class="p-2 rounded focus:outline-none focus:ring-2 focus:ring-pink-500"
+      >
+        <svg
+          class="w-8 h-8 text-pink-600"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Slide-In Menu -->
+    <div
+      id="sideMenu"
+      class="fixed top-0 right-0 h-full w-64 bg-white dark:bg-gray-800 shadow-lg transform translate-x-full transition-transform duration-300 z-50"
+    >
+      <div class="flex justify-between items-center p-4 border-b">
+        <h2 class="text-xl font-semibold text-pink-600">Menu</h2>
+        <!-- Close Button -->
+        <button
+          id="closeMenu"
+          class="p-2 rounded focus:outline-none focus:ring-2 focus:ring-pink-500"
+        >
+          <svg
+            class="w-6 h-6 text-gray-700"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="p-6 space-y-4">
+        <a
+          href="profile.html"
+          class="block text-gray-700 dark:text-gray-100 hover:text-pink-600 dark:hover:text-pink-400 transition duration-300 ease-in-out"
+          >Profile</a
+        >
+        <a
+          href="products.html"
+          class="block text-gray-700 dark:text-gray-100 hover:text-pink-600 dark:hover:text-pink-400 transition duration-300 ease-in-out"
+          >Products</a
+        >
+        <a
+          href="cart.html"
+          class="block text-gray-700 dark:text-gray-100 hover:text-pink-600 dark:hover:text-pink-400 transition duration-300 ease-in-out"
+          >Add to Cart</a
+        >
+        <a
+          href="login.html"
+          class="block text-gray-700 dark:text-gray-100 hover:text-pink-600 dark:hover:text-pink-400 transition duration-300 ease-in-out"
+          >Login / Sign Up</a
+        >
+        <button
+          id="themeToggle"
+          class="w-full text-left text-gray-700 dark:text-gray-100 hover:text-pink-600 dark:hover:text-pink-400 transition duration-300 ease-in-out"
+        >
+          Toggle Dark/Light
+        </button>
+        <a
+          href="about.html"
+          class="block text-gray-700 dark:text-gray-100 hover:text-pink-600 dark:hover:text-pink-400 transition duration-300 ease-in-out"
+          >About</a
+        >
+        <a
+          href="contact.html"
+          class="block text-gray-700 dark:text-gray-100 hover:text-pink-600 dark:hover:text-pink-400 transition duration-300 ease-in-out"
+          >Contact</a
+        >
+      </div>
+    </div>
+
+    <!-- Overlay -->
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 hidden transition-opacity duration-300 z-40"
+    ></div>
+
+    <!-- Contact Us Content -->
+    <main
+      class="min-h-screen bg-gradient-to-br from-pink-50 via-white to-rose-50 px-6 pb-20 pt-40 dark:from-gray-900 dark:via-gray-800 dark:to-pink-950"
+    >
+      <section class="mx-auto max-w-6xl">
+        <div class="grid items-stretch gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <div
+            class="rounded-lg bg-white/90 p-10 shadow-xl ring-1 ring-pink-100 dark:bg-gray-800/90 dark:ring-gray-700"
+          >
+            <p
+              class="text-sm font-semibold uppercase tracking-[0.25em] text-pink-600 dark:text-pink-400"
+            >
+              Contact Us
+            </p>
+            <h1
+              class="mt-3 text-4xl font-bold text-gray-900 dark:text-gray-100"
+            >
+              Let’s Talk
+            </h1>
+            <p class="mt-4 text-gray-600 dark:text-gray-300">
+              We would love to hear from you. Share your query and we will get
+              back to you as soon as possible.
+            </p>
+            <div class="mt-8 space-y-4 text-gray-700 dark:text-gray-300">
+              <p>
+                <span class="font-semibold text-gray-900 dark:text-gray-100"
+                  >Email:</span
+                >
+                MoreInfo@Rabika.in
+              </p>
+              <p>
+                <span class="font-semibold text-gray-900 dark:text-gray-100"
+                  >Phone:</span
+                >
+                +91 70604 92443
+              </p>
+              <p>
+                <span class="font-semibold text-gray-900 dark:text-gray-100"
+                  >Address:</span
+                >
+                Happy Girls PG, Patel Nagar, Dehradun (U.K) 248001
+              </p>
+            </div>
+          </div>
+          <form
+            id="contactForm"
+            class="rounded-lg bg-white/90 p-10 shadow-xl ring-1 ring-pink-100 dark:bg-gray-800/90 dark:ring-gray-700"
+          >
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100">
+              Send a Message
+            </h2>
+            <div class="mt-6 grid gap-4">
+              <input
+                id="contactName"
+                required
+                class="rounded-lg border border-pink-100 px-4 py-3 transition hover:border-pink-300 focus:border-pink-500 focus:outline-none focus:ring-4 focus:ring-pink-100 dark:border-gray-700 dark:bg-gray-900 dark:focus:ring-pink-950"
+                placeholder="Your name"
+              />
+              <input
+                id="contactEmail"
+                type="email"
+                required
+                class="rounded-lg border border-pink-100 px-4 py-3 transition hover:border-pink-300 focus:border-pink-500 focus:outline-none focus:ring-4 focus:ring-pink-100 dark:border-gray-700 dark:bg-gray-900 dark:focus:ring-pink-950"
+                placeholder="Email address"
+              />
+              <textarea
+                id="contactMessage"
+                rows="5"
+                required
+                class="rounded-lg border border-pink-100 px-4 py-3 transition hover:border-pink-300 focus:border-pink-500 focus:outline-none focus:ring-4 focus:ring-pink-100 dark:border-gray-700 dark:bg-gray-900 dark:focus:ring-pink-950"
+                placeholder="Message"
+              ></textarea>
+              <button
+                type="submit"
+                class="rounded-lg bg-pink-600 px-8 py-3 font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-pink-700 hover:shadow-xl"
+              >
+                Submit
+              </button>
+              <p
+                id="contactStatus"
+                class="hidden rounded-lg bg-pink-50 px-4 py-3 text-sm font-semibold text-pink-700 dark:bg-pink-950 dark:text-pink-200"
+              ></p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-gray-100 dark:bg-gray-800 text-center py-6">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Support -->
+        <div>
+          <h3
+            class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4"
+          >
+            Support
+          </h3>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="index.html"
+                class="text-gray-600 dark:text-gray-200 hover:text-pink-600 dark:hover:text-pink-400"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="about.html"
+                class="text-gray-600 dark:text-gray-200 hover:text-pink-600 dark:hover:text-pink-400"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="text-gray-600 dark:text-gray-200 hover:text-pink-600 dark:hover:text-pink-400"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a
+                href="products.html"
+                class="text-gray-600 dark:text-gray-200 hover:text-pink-600 dark:hover:text-pink-400"
+                >Products</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Office Address -->
+        <div>
+          <h3
+            class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4"
+          >
+            Office Address
+          </h3>
+          <p class="text-gray-600 dark:text-gray-200 text-sm">Happy Girls PG</p>
+          <p class="text-gray-600 dark:text-gray-200 text-sm">
+            Patel Nagar Dehradun 248001
+          </p>
+          <p class="text-gray-600 dark:text-gray-200 text-sm">Dehradun (U.K)</p>
+        </div>
+
+        <!-- Policies -->
+        <div>
+          <h3
+            class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4"
+          >
+            Policies
+          </h3>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="privacy.html"
+                class="text-gray-600 dark:text-gray-200 hover:text-pink-600 dark:hover:text-pink-400"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a
+                href="shipping.html"
+                class="text-gray-600 dark:text-gray-200 hover:text-pink-600 dark:hover:text-pink-400"
+                >Shipping & Delivery Policy</a
+              >
+            </li>
+            <li>
+              <a
+                href="refund.html"
+                class="text-gray-600 dark:text-gray-200 hover:text-pink-600 dark:hover:text-pink-400"
+                >Refund & Exchange Policy</a
+              >
+            </li>
+            <li>
+              <a
+                href="terms.html"
+                class="text-gray-600 dark:text-gray-200 hover:text-pink-600 dark:hover:text-pink-400"
+                >Terms and Conditions</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p
+        class="mt-4 font-semibold justify-center text-gray-600 dark:text-gray-200"
+      >
+        © 2026 Rabika. All rights reserved.
+      </p>
+      <div class="flex justify-center space-x-4 mt-1 mb-4">
+        <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-pink-600"
+          >🌸</a
+        >
+        <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-pink-600"
+          >🌐</a
+        >
+        <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-pink-600"
+          >📧</a
+        >
+      </div>
+    </footer>
+  </body>
+</html>

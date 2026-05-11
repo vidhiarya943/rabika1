@@ -1,0 +1,459 @@
+<!doctype html>
+<html
+  lang="en"
+  class="scroll-smooth bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rabika - Privacy Policy</title>
+    <link rel="icon" href="images/logo.jpeg" type="image/jpeg" />
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+    <script src="script.js" defer></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="fixed top-0 z-50 flex w-full items-center justify-between border-b border-white/40 bg-white/75 px-6 py-4 shadow-sm backdrop-blur-xl dark:border-gray-700/50 dark:bg-gray-900/75"
+    >
+      <a
+        href="index.html"
+        class="flex items-center gap-3 text-5xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-300"
+        style="font-family: &quot;Berkshire Swash&quot;, cursive"
+      >
+        <img
+          src="images/logo.jpeg"
+          alt="Rabika logo"
+          class="h-12 w-12 rounded-full object-cover"
+        />
+        <img
+          src="images/rabika.png"
+          alt="Rabika Logo"
+          class="h-12 w-auto object-contain transition-transform duration-300 hover:scale-105"
+        />
+      </a>
+      <ul
+        class="hidden md:flex space-x-10 text-lg font-semibold text-gray-900 dark:text-gray-100"
+      >
+        <li><a href="index.html" class="hover:text-pink-400">Home</a></li>
+        <li>
+          <a href="products.html" class="hover:text-pink-400">Products</a>
+        </li>
+        <li><a href="cart.html" class="hover:text-pink-400">Add to Cart</a></li>
+      </ul>
+      <!-- Hamburger Button -->
+      <button
+        id="menuToggle"
+        class="p-2 rounded focus:outline-none focus:ring-2 focus:ring-pink-500"
+      >
+        <svg
+          class="w-8 h-8 text-pink-600 dark:text-pink-400"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Slide-In Menu -->
+    <div
+      id="sideMenu"
+      class="fixed top-0 right-0 h-full w-64 bg-white dark:bg-gray-800 shadow-lg transform translate-x-full transition-transform duration-300 z-50"
+    >
+      <div class="flex justify-between items-center p-4 border-b">
+        <h2 class="text-xl font-semibold text-pink-600">Menu</h2>
+        <!-- Close Button -->
+        <button
+          id="closeMenu"
+          class="p-2 rounded focus:outline-none focus:ring-2 focus:ring-pink-500"
+        >
+          <svg
+            class="w-6 h-6 text-gray-700"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="p-6 space-y-4">
+        <a
+          href="profile.html"
+          class="block text-gray-700 dark:text-gray-100 hover:text-pink-600 dark:hover:text-pink-400 transition duration-300 ease-in-out"
+          >Profile</a
+        >
+        <a
+          href="products.html"
+          class="block text-gray-700 dark:text-gray-100 hover:text-pink-600 dark:hover:text-pink-400 transition duration-300 ease-in-out"
+          >Products</a
+        >
+        <a
+          href="cart.html"
+          class="block text-gray-700 dark:text-gray-100 hover:text-pink-600 dark:hover:text-pink-400 transition duration-300 ease-in-out"
+          >Add to Cart</a
+        >
+        <a
+          href="login.html"
+          class="block text-gray-700 dark:text-gray-100 hover:text-pink-600 dark:hover:text-pink-400 transition duration-300 ease-in-out"
+          >Login / Sign Up</a
+        >
+        <button
+          id="themeToggle"
+          class="w-full text-left text-gray-700 dark:text-gray-100 hover:text-pink-600 dark:hover:text-pink-400 transition duration-300 ease-in-out"
+        >
+          Toggle Dark/Light
+        </button>
+        <a
+          href="about.html"
+          class="block text-gray-700 dark:text-gray-100 hover:text-pink-600 dark:hover:text-pink-400 transition duration-300 ease-in-out"
+          >About</a
+        >
+        <a
+          href="contact.html"
+          class="block text-gray-700 dark:text-gray-100 hover:text-pink-600 dark:hover:text-pink-400 transition duration-300 ease-in-out"
+          >Contact</a
+        >
+      </div>
+    </div>
+
+    <!-- Overlay -->
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 hidden transition-opacity duration-300 z-40"
+    ></div>
+
+    <!-- Privacy Policy Content -->
+    <main
+      class="min-h-screen bg-gradient-to-br from-pink-50 via-white to-rose-50 px-6 pb-16 pt-32 dark:from-gray-900 dark:via-gray-800 dark:to-pink-950"
+    >
+      <section class="mx-auto max-w-6xl">
+        <h1
+          class="mb-6 text-5xl font-bold text-center text-pink-700 dark:text-pink-400"
+        >
+          Privacy Policy
+        </h1>
+        <p class="mb-4 text-gray-700 dark:text-gray-300">
+          At Rabika, we are committed to protecting your privacy. This Privacy
+          Policy explains how we collect, use, and safeguard your personal
+          information when you visit our website or make a purchase.
+        </p>
+        <p class="mb-4 text-gray-700 dark:text-gray-300">
+          By using our website, you agree to the terms of this Privacy Policy.
+        </p>
+        <h2
+          class="text-2xl font-semibold text-pink-600 dark:text-pink-400 mb-4"
+        >
+          1. Information We Collect
+        </h2>
+        <h4 class="text-xl font-medium text-gray-800 dark:text-gray-200 mb-2">
+          A. Personal Information
+        </h4>
+        <p class="mb-2 text-gray-700 dark:text-gray-300">
+          When you use our website, we may collect personal details such as:
+        </p>
+        <ul class="list-disc list-inside mb-2 text-gray-700 dark:text-gray-300">
+          <li>Full Name</li>
+          <li>Email Address</li>
+          <li>Mobile Number</li>
+          <li>Shipping and Billing Addresses</li>
+          <li>Order Details</li>
+        </ul>
+        <p class="mb-2 text-gray-700 dark:text-gray-300">
+          <b>Note:</b> We do not store your payment information. Payments are
+          processed securely through trusted third-party payment gateways.
+        </p>
+        <h4 class="text-xl font-medium text-gray-800 dark:text-gray-200 mb-2">
+          B. Non-Personal Information
+        </h4>
+        <p class="mb-2 text-gray-700 dark:text-gray-300">
+          We may also collect non-identifiable information such as:
+        </p>
+        <ul class="list-disc list-inside mb-4 text-gray-700 dark:text-gray-300">
+          <li>IP Address</li>
+          <li>Browser Type</li>
+          <li>Device Information</li>
+          <li>Website Usage Data(pages visited, time spent, etc.)</li>
+        </ul>
+        <h2
+          class="text-2xl font-semibold text-pink-600 dark:text-pink-400 mb-4"
+        >
+          2. How We Use Your Information
+        </h2>
+        <p class="mb-2 text-gray-700 dark:text-gray-300">
+          We use the collected information for various purposes, including:
+        </p>
+        <ul class="list-disc list-inside mb-4 text-gray-700 dark:text-gray-300">
+          <li>To process and deliver your orders</li>
+          <li>To communicate order updates and customer support</li>
+          <li>To improve our website and user experience</li>
+          <li>To send promotional offers and updates (only if you opt-in)</li>
+          <li>To prevent fraud and maintain website security</li>
+          <li>To comply with legal requirements</li>
+        </ul>
+        <h2
+          class="text-2xl font-semibold text-pink-600 dark:text-pink-400 mb-4"
+        >
+          3. Sharing of Information
+        </h2>
+        <p class="mb-2 text-gray-700 dark:text-gray-300">
+          We respect your privacy and do not sell your personal data. Your
+          information may be shared only with:
+        </p>
+        <ul class="list-disc list-inside mb-4 text-gray-700 dark:text-gray-300">
+          <li>Trusted payment gateway providers for secure transactions</li>
+          <li>Delivery and logistics partners to fulfill your orders</li>
+          <li>Service providers (hosting, analytics, communication tools)</li>
+          <li>Government or legal authorities if required by law</li>
+        </ul>
+        <h2
+          class="text-2xl font-semibold text-pink-600 dark:text-pink-400 mb-4"
+        >
+          4. Cookies and Tracking Technologies
+        </h2>
+        <p class="mb-2 text-gray-700 dark:text-gray-300">
+          We uses cookies to enhance your browsing experience. Cookies help us:
+        </p>
+        <ul class="list-disc list-inside mb-2 text-gray-700 dark:text-gray-300">
+          <li>Remember your preferences and settings</li>
+          <li>Understand website traffic and usage</li>
+          <li>Improve website performance</li>
+        </ul>
+        <p class="mb-4 text-gray-700 dark:text-gray-300">
+          We uses cookies to enhance your browsing experience. Cookies help us:
+        </p>
+        <h2
+          class="text-2xl font-semibold text-pink-600 dark:text-pink-400 mb-4"
+        >
+          5. Data Security
+        </h2>
+        <p class="mb-4 text-gray-700 dark:text-gray-300">
+          We implement appropriate security measures to protect your personal
+          data against unauthorized access, alteration, disclosure, or
+          destruction. However, no online platform can guarantee 100% security.
+        </p>
+        <h2
+          class="text-2xl font-semibold text-pink-600 dark:text-pink-400 mb-4"
+        >
+          6. Your Rights
+        </h2>
+        <p class="mb-2 text-gray-700 dark:text-gray-300">
+          You have the right to:
+        </p>
+        <ul class="list-disc list-inside mb-2 text-gray-700 dark:text-gray-300">
+          <li>Access your personal information</li>
+          <li>Request correction of inaccurate data</li>
+          <li>Request deletion of your data</li>
+          <li>Opt-out of marketing communications at any time</li>
+        </ul>
+        <p class="mb-4 text-gray-700 dark:text-gray-300">
+          To exercise these rights, please contact us using the details below.
+        </p>
+        <h2
+          class="text-2xl font-semibold text-pink-600 dark:text-pink-400 mb-4"
+        >
+          7. Third-Party Links
+        </h2>
+        <p class="mb-4 text-gray-700 dark:text-gray-300">
+          Our website may contain links to external websites. We are not
+          responsible for the privacy practices or content of such third-party
+          sites.
+        </p>
+        <h2
+          class="text-2xl font-semibold text-pink-600 dark:text-pink-400 mb-4"
+        >
+          8. Children's Privacy
+        </h2>
+        <p class="mb-4 text-gray-700 dark:text-gray-300">
+          Our website does not knowingly collect personal information from
+          individuals under the age of 18. If we become aware of such data, we
+          will take steps to remove it promptly.
+        </p>
+        <h2
+          class="text-2xl font-semibold text-pink-600 dark:text-pink-400 mb-4"
+        >
+          9. Updates to This Policy
+        </h2>
+        <p class="mb-4 text-gray-700 dark:text-gray-300">
+          We may update this Privacy Policy periodically to reflect changes in
+          our practices or legal requirements. Any updates will be posted on
+          this page with a revised effective date.
+        </p>
+        <h2
+          class="text-2xl font-semibold text-pink-600 dark:text-pink-400 mb-4"
+        >
+          10. Contact Us
+        </h2>
+        <p class="mb-4 text-gray-700 dark:text-gray-300">
+          If you have any questions, concerns, or requests regarding this
+          Privacy Policy, please contact us:
+        </p>
+        <ul class="list-disc list-inside mb-2 text-gray-700 dark:text-gray-300">
+          <li>
+            <b>Website: </b
+            ><a
+              href="https://www.rabika.in"
+              class="text-pink-600 dark:text-pink-400 hover:underline"
+              >www.rabika.in</a
+            >
+          </li>
+          <li>
+            <b>Email: </b
+            ><a
+              href="mailto:MoreInfo@Rabika.in"
+              class="text-pink-600 dark:text-pink-400 hover:underline"
+              >MoreInfo@Rabika.in</a
+            >
+          </li>
+          <li><b>Phone: </b>+91 7060492443</li>
+        </ul>
+        <p class="mb-4 text-gray-700 dark:text-gray-300">
+          <b
+            >By accessing or using Rabika.in, you acknowledge that you have
+            read, understood, and agreed to this Privacy Policy.</b
+          >
+        </p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 dark:bg-gray-800 text-center py-6">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Support -->
+        <div>
+          <h3
+            class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4"
+          >
+            Support
+          </h3>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="index.html"
+                class="text-gray-600 dark:text-gray-200 hover:text-pink-600 dark:hover:text-pink-400"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="about.html"
+                class="text-gray-600 dark:text-gray-200 hover:text-pink-600 dark:hover:text-pink-400"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="text-gray-600 dark:text-gray-200 hover:text-pink-600 dark:hover:text-pink-400"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a
+                href="products.html"
+                class="text-gray-600 dark:text-gray-200 hover:text-pink-600 dark:hover:text-pink-400"
+                >Products</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Office Address -->
+        <div>
+          <h3
+            class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4"
+          >
+            Office Address
+          </h3>
+          <p class="text-gray-600 dark:text-gray-200 text-sm">Happy Girls Pg</p>
+          <p class="text-gray-600 dark:text-gray-200 text-sm">
+            Patel Nagar Dehradun 248001
+          </p>
+          <p class="text-gray-600 dark:text-gray-200 text-sm">Dehradun (U.K)</p>
+        </div>
+
+        <!-- Policies -->
+        <div>
+          <h3
+            class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4"
+          >
+            Policies
+          </h3>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="privacy.html"
+                class="text-gray-600 dark:text-gray-200 hover:text-pink-600 dark:hover:text-pink-400"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a
+                href="shipping.html"
+                class="text-gray-600 dark:text-gray-200 hover:text-pink-600 dark:hover:text-pink-400"
+                >Shipping & Delivery Policy</a
+              >
+            </li>
+            <li>
+              <a
+                href="refund.html"
+                class="text-gray-600 dark:text-gray-200 hover:text-pink-600 dark:hover:text-pink-400"
+                >Refund & Exchange Policy</a
+              >
+            </li>
+            <li>
+              <a
+                href="terms.html"
+                class="text-gray-600 dark:text-gray-200 hover:text-pink-600 dark:hover:text-pink-400"
+                >Terms and Conditions</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p
+        class="mt-4 font-semibold justify-center text-gray-600 dark:text-gray-200"
+      >
+        © 2026 Rabika. All rights reserved.
+      </p>
+      <div class="flex justify-center space-x-4 mt-1 mb-4">
+        <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-pink-600"
+          >🌸</a
+        >
+        <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-pink-600"
+          >🌐</a
+        >
+        <a href="#" class="text-gray-500 dark:text-gray-400 hover:text-pink-600"
+          >📧</a
+        >
+      </div>
+    </footer>
+  </body>
+</html>
