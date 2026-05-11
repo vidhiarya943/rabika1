@@ -316,7 +316,7 @@ function renderProductCard(product) {
       href="product-detail.html?id=${product.id}"
       class="group relative z-0 block overflow-hidden rounded-lg bg-white shadow-md hover:-translate-y-1 hover:shadow-xl dark:bg-gray-800 transition"
     >
-      <div class="bg-gradient-to-br from-pink-50 via-rose-100 to-fuchsia-100 p-3 dark:from-gray-900 dark:via-gray-800 dark:to-pink-950">
+      <div class="bg-white p-2 dark:bg-gray-900">
         <img
           src="${product.image}"
           alt="${product.name}"
