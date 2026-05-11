@@ -314,7 +314,7 @@ function renderProductCard(product) {
   return `
     <a
       href="product-detail.html?id=${product.id}"
-      class="group relative z-0 block overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-pink-100 hover:-translate-y-1 hover:shadow-xl dark:bg-gray-800 dark:ring-gray-700 transition"
+      class="group relative z-0 block overflow-hidden rounded-lg bg-white shadow-md hover:-translate-y-1 hover:shadow-xl dark:bg-gray-800 transition"
     >
       <div class="bg-gradient-to-br from-pink-50 via-rose-100 to-fuchsia-100 p-3 dark:from-gray-900 dark:via-gray-800 dark:to-pink-950">
         <img
@@ -328,9 +328,6 @@ function renderProductCard(product) {
         <h3 class="text-lg font-semibold text-gray-900 group-hover:text-pink-600 dark:text-gray-100 dark:group-hover:text-pink-400">
           ${product.name}
         </h3>
-        <p class="mt-2 min-h-[3rem] text-sm leading-6 text-gray-600 dark:text-gray-400">
-          ${product.short}
-        </p>
         <div class="mt-4 flex items-center justify-between gap-3">
           <span>
             <span class="mr-1 text-sm text-gray-400 line-through">${product.originalPrice}</span>
