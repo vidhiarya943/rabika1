@@ -33,59 +33,16 @@
   <body>
     <!-- Navbar -->
     <nav
-      class="fixed top-0 z-50 flex w-full items-center justify-between border-b border-white/40 bg-white/75 px-6 py-4 shadow-sm backdrop-blur-xl dark:border-gray-700/50 dark:bg-gray-900/75"
+      id="navbar"
+      class="fixed top-8 left-0 w-full flex items-center justify-between border-b border-white/40 bg-white/75 px-4 py-3 shadow-sm backdrop-blur-xl dark:border-gray-700/50 dark:bg-gray-900/75 z-50"
     >
-      <a
-        href="index.html"
-        class="flex items-center gap-3 text-5xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-300"
-        style="font-family: &quot;Berkshire Swash&quot;, cursive"
-      >
-        
-        <img
-          src="images/rabika.png"
-          alt="Rabika Logo"
-          class="h-12 w-auto object-contain transition-transform duration-300 hover:scale-105"
-        />
-      </a>
-      <ul
-        class="hidden md:flex space-x-10 text-lg font-semibold text-gray-900 dark:text-gray-100"
-      >
-        <li>
-          <a
-            href="index.html"
-            class="hover:text-pink-600 dark:hover:text-pink-400"
-            >Home</a
-          >
-        </li>
-        <li>
-          <a
-            href="products.html"
-            class="hover:text-pink-600 dark:hover:text-pink-400"
-            >Products</a
-          >
-        </li>
-         <li>
-          <a
-            href="about.html"
-            class="hover:text-pink-600 dark:hover:text-pink-400"
-            >About Us</a
-          >
-        </li>
-        <li>
-          <a
-            href="cart.html"
-            class="hover:text-pink-600 dark:hover:text-pink-400"
-            >Add to Cart</a
-          >
-        </li>
-      </ul>
-      <!-- Hamburger Button -->
+      <!-- Mobile: Hamburger Left -->
       <button
         id="menuToggle"
-        class="p-2 rounded focus:outline-none focus:ring-2 focus:ring-pink-500"
+        class="p-2 rounded focus:outline-none focus:ring-2 focus:ring-pink-500 md:order-3"
       >
         <svg
-          class="w-8 h-8 text-pink-600"
+          class="w-7 h-7 text-pink-600 dark:text-pink-400"
           fill="none"
           stroke="currentColor"
           stroke-width="2"
@@ -98,12 +55,53 @@
           />
         </svg>
       </button>
+
+      <!-- Logo -->
+      <a
+        href="index.html"
+        class="absolute left-1/2 transform -translate-x-1/2 md:static md:translate-x-0 md:order-1"
+      >
+        <img
+          src="images/rabika.png"
+          alt="Rabika Logo"
+          class="h-12 w-auto object-contain transition-transform duration-300 hover:scale-105"
+        />
+      </a>
+
+      <!-- Mobile: Cart Right -->
+      <a href="cart.html" class="ml-auto p-2 md:hidden">
+        <svg
+          class="w-7 h-7 text-pink-600 dark:text-pink-400"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.6 8h13.2M7 13h10M10 21a1 1 0 11-2 0 1 1 0 012 0zm8 0a1 1 0 11-2 0 1 1 0 012 0z"
+          />
+        </svg>
+      </a>
+
+      <!-- Desktop: Nav Links Center -->
+      <ul
+        class="hidden md:flex space-x-10 text-lg font-semibold text-gray-900 dark:text-gray-100 mx-auto md:order-2"
+      >
+        <li><a href="index.html" class="hover:text-pink-400">Home</a></li>
+        <li>
+          <a href="products.html" class="hover:text-pink-400">Products</a>
+        </li>
+        <li><a href="about.html" class="hover:text-pink-400">About Us</a></li>
+        <li><a href="cart.html" class="hover:text-pink-400">Add to Cart</a></li>
+      </ul>
     </nav>
 
     <!-- Slide-In Menu -->
     <div
       id="sideMenu"
-      class="fixed top-0 right-0 h-full w-64 bg-white dark:bg-gray-800 shadow-lg transform translate-x-full transition-transform duration-300 z-50"
+      class="fixed top-0 left-auto md:right-0 h-full w-64 bg-white dark:bg-gray-800 shadow-lg transform translate-x-full transition-transform duration-300 z-50"
     >
       <div class="flex justify-between items-center p-4 border-b">
         <h2 class="text-xl font-semibold text-pink-600">Menu</h2>
