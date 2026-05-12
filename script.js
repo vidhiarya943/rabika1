@@ -316,6 +316,8 @@ function renderProductCard(product) {
       href="product-detail.html?id=${product.id}"
       class="group relative block overflow-hidden rounded-lg bg-white shadow-md hover:-translate-y-1 hover:shadow-xl dark:bg-gray-800 transition"
     >
+
+
       <!-- Image -->
       <div class="bg-white dark:bg-gray-900">
         <img
@@ -327,19 +329,21 @@ function renderProductCard(product) {
       </div>
 
       <!-- Content -->
-      <div class="p-3">
+      <div class="p-3 text-center">
         <h3 class="text-base font-semibold text-gray-900 group-hover:text-pink-600 dark:text-gray-100 dark:group-hover:text-pink-400 mb-2">
           ${product.name}
         </h3>
 
-        <div class="flex items-center justify-between">
+        <div class="flex flex-col items-center gap-1">
           <span>
             <span class="mr-1 text-xs text-gray-400 line-through">${product.originalPrice}</span>
             <span class="font-bold text-pink-600 dark:text-pink-400">${product.price}</span>
           </span>
-          <span class="rounded-full bg-pink-600 px-3 py-1 text-xs font-medium text-white group-hover:bg-pink-700">
-            View
-          </span>
+          <button
+            class="mt-2 rounded-lg bg-pink-600 px-4 py-2 text-sm font-medium text-white hover:bg-pink-700"
+          >
+            Select Options
+          </button>
         </div>
       </div>
     </a>
