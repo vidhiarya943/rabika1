@@ -260,8 +260,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (menuToggle && sideMenu && overlay) {
     menuToggle.addEventListener("click", () => {
-      sideMenu.classList.remove("translate-x-full");
-      sideMenu.classList.add("translate-x-0");
+      if (window.innerWidth < 768) {
+        // Mobile → slide in from left
+        sideMenu.classList.remove("-translate-x-full");
+        sideMenu.classList.add("translate-x-0");
+      } else {
+        // Desktop → slide in from right
+        sideMenu.classList.remove("md:translate-x-full");
+        sideMenu.classList.add("md:translate-x-0");
+      }
       overlay.classList.remove("hidden");
     });
   }
@@ -272,14 +279,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function closeMenuFunc() {
-    sideMenu.classList.add("translate-x-full");
-    sideMenu.classList.remove("translate-x-0");
+    if (window.innerWidth < 768) {
+      // Mobile → hide to left
+      sideMenu.classList.add("-translate-x-full");
+      sideMenu.classList.remove("translate-x-0");
+    } else {
+      // Desktop → hide to right
+      sideMenu.classList.add("md:translate-x-full");
+      sideMenu.classList.remove("md:translate-x-0");
+    }
     overlay.classList.add("hidden");
-  }
-
-  function setTheme(theme) {
-    document.documentElement.classList.toggle("dark", theme === "dark");
-    localStorage.setItem("theme", theme);
   }
 
   if (themeToggle) {
