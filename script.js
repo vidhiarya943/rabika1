@@ -314,26 +314,30 @@ function renderProductCard(product) {
   return `
     <a
       href="product-detail.html?id=${product.id}"
-      class="group relative z-0 block overflow-hidden rounded-lg bg-white shadow-md hover:-translate-y-1 hover:shadow-xl dark:bg-gray-800 transition"
+      class="group relative block overflow-hidden rounded-lg bg-white shadow-md hover:-translate-y-1 hover:shadow-xl dark:bg-gray-800 transition"
     >
-      <div class="bg-white p-2 dark:bg-gray-900">
+      <!-- Image -->
+      <div class="bg-white dark:bg-gray-900">
         <img
           src="${product.image}"
           alt="${product.name}"
-          class="h-full w-full aspect-[4/5] rounded-md object-cover"
+          class="w-full aspect-[3/4] object-cover rounded-md"
           onerror="this.onerror=null; this.src='${logoFallback}';"
         />
       </div>
-      <div class="p-4">
-        <h3 class="text-lg font-semibold text-gray-900 group-hover:text-pink-600 dark:text-gray-100 dark:group-hover:text-pink-400">
+
+      <!-- Content -->
+      <div class="p-3">
+        <h3 class="text-base font-semibold text-gray-900 group-hover:text-pink-600 dark:text-gray-100 dark:group-hover:text-pink-400 mb-2">
           ${product.name}
         </h3>
-        <div class="mt-4 flex items-center justify-between gap-3">
+
+        <div class="flex items-center justify-between">
           <span>
-            <span class="mr-1 text-sm text-gray-400 line-through">${product.originalPrice}</span>
+            <span class="mr-1 text-xs text-gray-400 line-through">${product.originalPrice}</span>
             <span class="font-bold text-pink-600 dark:text-pink-400">${product.price}</span>
           </span>
-          <span class="rounded-full bg-pink-600 px-4 py-2 text-sm font-medium text-white group-hover:bg-pink-700">
+          <span class="rounded-full bg-pink-600 px-3 py-1 text-xs font-medium text-white group-hover:bg-pink-700">
             View
           </span>
         </div>
